@@ -25,6 +25,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         window?.rootViewController = createTabBar()
         window?.makeKeyAndVisible()
         
+        configureNavigationBar()
     }
 
     func createSearchNC() -> UINavigationController {
@@ -41,6 +42,9 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         favoritesVC.tabBarItem = UITabBarItem(tabBarSystemItem: .favorites, tag: 1)
         
         return UINavigationController(rootViewController: favoritesVC)
+    }
+    func configureNavigationBar() {
+        UINavigationBar.appearance().tintColor = .systemGreen
     }
     
     func createTabBar() -> UITabBarController {
